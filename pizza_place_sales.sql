@@ -30,7 +30,8 @@ order by count(*) DESC;
 -- 5.) Select the pizza sales from 2015
 select round(sum(pizzas.price*od.quantity), 2) as pizza_sale from order_details as od
 left join pizzas
-using(pizza_id);
+using(pizza_id)
+where od.order_id = 105;
 
 -- 6.) Select the pizza sales for each month
 select monthname(orders.date) as month_name, round(sum(pizzas.price*od.quantity), 2) as month_sale from orders
@@ -41,7 +42,6 @@ using(pizza_id)
 group by month_name
 order by month_sale DESC;
 
-
 -- 7.) Select the Top 5 pizzas and theifrom 2015
 select replace(pt.name, 'The ', '') as pizza_name, round(sum(pizzas.price*od.quantity), 2) as year_sale from pizza_types as pt
 left join pizzas
@@ -51,3 +51,18 @@ using(pizza_id)
 group by pizza_name
 order by year_sale DESC
 limit 5;
+
+-- 8.) Select the average amount of pizzas a customer orders;
+select round(avg(quantity),2) as avg_quantity
+from
+	(select sum(quantity) as quantity
+    from order_details
+	group by order_id) as total_quantity;
+
+-- 9.) Select the average of how much a customer is paying per order
+select round(avg(price),2) as avg_price from
+    (select round(sum(pizzas.price*od.quantity), 2) as price
+	from order_details as od
+	left join pizzas
+	using(pizza_id)
+	group by order_id) as total_cost;
