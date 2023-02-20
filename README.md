@@ -11,3 +11,6 @@
 
 ## [Pizza Place Sales by Maven Analytics](https://github.com/arjayjean/SQL-Portfolio/blob/main/pizza_place_sales.sql "Pizza Place Sales")
 * With a dataset provided by [Maven Analytics](https://www.mavenanalytics.io/data-playground "Maven Analytics' Data Playground"), I quantified monthly and yearly sales and identified the total number of orders being made by the year, month, and day, along with the peak hours. The data was imported into an [AWS RDS for MySQL](https://aws.amazon.com/rds/mysql/ "RDS for MySQL").
+
+## [SQL Murder Mystery](https://github.com/arjayjean/SQL-Portfolio/blob/main/sql_murder_mystery.sql "SQL Murder Mystery")
+* [SQL Murder Mystery](https://mystery.knightlab.com/ "SQL Murder Mystery") is a game designed for both new and experienced SQL users to solve a murder mystery using SQL concepts and commands. I have solved the mystery and looked further into why the murderer did what they did. **CASE CLOSED**!!!
